@@ -10,3 +10,7 @@ DB.sync()(app);
 app.listen('3000', () => {
     console.log('The server is working!')
 })
+
+/**
+ * There are 4 errors in this file
+ */
