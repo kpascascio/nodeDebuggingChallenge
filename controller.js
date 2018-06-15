@@ -1,15 +1,16 @@
-const router = require('express').Router;
+const router = require('express').Router();
 const sequelize = require('./db')
-const User = sequelize.import('/model')
+const User = sequelize.import('./model')
 
-router.get('/changethis', (response) => {
+router.get('/', (request, response) => {
     User.findAll().then(users => {
         response.status(200).json({users: users})
     })
 })
 
 router.post('/', (request, response) => {
-
+    console.log(request)
+    console.log(request.body)
     User.create({
         first_name: request.body.firstName,
         last_name: request.body.lastName,
@@ -22,7 +23,7 @@ router.post('/', (request, response) => {
     })
 })
 
-modules.export = router;
+module.exports = router;
 
 /**
  * There are 4 errors 

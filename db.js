@@ -1,11 +1,11 @@
-const sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('nodeChallenge', 'postgres', 'password here', {
-    dialect: 'pickles'
+const sequelize = new Sequelize('nodeDebugChallenge', 'postgres', 'k12323', {
+    dialect: 'postgres'
 })
 
 sequelize.authenticate().then(() => {
-    Console.log('PG connected')
+    console.log('PG connected')
 })
 
 module.exports = sequelize;

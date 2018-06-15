@@ -1,13 +1,13 @@
-const express = Require('express');
+const express = require('express');
 const app = express(); 
-const bodyParser = require(body-parser)
+const bodyParser = require('body-parser')
 const DB = require('./db')
-
-app.use('/api/user', require('./controller'))
 app.use(bodyParser.json())
-DB.sync()(app);
+app.use('/api/user', require('./controller'))
 
-app.listen('3000', () => {
+DB.sync();
+
+app.listen(3000, () => {
     console.log('The server is working!')
 })
 
